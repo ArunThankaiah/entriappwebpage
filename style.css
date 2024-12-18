@@ -1,236 +1,355 @@
-*{
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
     box-sizing: border-box;
-}
-body{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
 }
-header{
-    width: 100%;
-    height: 75px;
-    background-color: #000815;
-    
+
+body {
+    font-family: "Poppins", serif;
+    background: #f4f4f4;
+}   
+
+a,
+li {
+    list-style: none;
+    text-decoration: none;
 }
 .navbar{
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    padding: 1rem 7%;
+    background: rgba(0,0,0,0.9);
 
 }
-.navbar img{
-    width: 25px;
-    height: 25px;
-    margin-left: 55px;
-    border-radius: 2px;
+.navbar .logo{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 2px;
 }
-.navbar h2{
-    color: white;
+.navbar .logo img{
+    width: 2rem;
+    display: block;
+
 }
-nav{
-    display: inline-block;
-    margin-right: 35px;
-    margin: 35px 25px;
-    
+.navbar ul{
+    display: flex;
+    align-items: center;
+    position: relative;
 }
-nav a{
-    text-decoration: none;
-    padding: 25px;
-    color: white;
+.navbar ul li{
+    padding: 0 2.5rem;
+}
+.navbar ul li a{
+   
+    color: #fff;
+    position: relative;
+}
+.navbar ul li a::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0); /* Initially hide the underline */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+
+}
+.navbar ul li a:hover::after {
+    transform: scaleX(1); /* Reveal the underline on hover */
+    transform-origin: bottom left;
+}
+.menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.menu span{
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 2px;
 }
 
-.main-navbar{
-    width: 100%;
-    height: 100vh;
+
+.main-navbar {
     background-size: cover;
-    background-image:url(https://myways-public-data-prod.s3.ap-south-1.amazonaws.com/myways-resource-library/blogs/what-is-machine-learning-and-what-are-different-types-of-algorithm-of-ml_Image_blogs.jpg);
+    background-image: url(https://myways-public-data-prod.s3.ap-south-1.amazonaws.com/myways-resource-library/blogs/what-is-machine-learning-and-what-are-different-types-of-algorithm-of-ml_Image_blogs.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     display: flex;
     align-items: center;
-  
+    padding: 5rem 0;
+
 }
 
-.main-navbar .navbar{
+.home-bx{
     display: flex;
-    justify-content:space-around;
     align-items: center;
-    width: 100%;
-   
+    justify-content:center;
+    padding: 1rem 5rem;
+    gap: 5rem;
 }
-.main-navbar h1{
+.main-navbar h1 {
     margin: 0;
-    
+
 }
 
-.left-section{
+.left-section {
     width: 600px;
     align-self: flex-start;
-    
+
 }
-.left-section h1{
+
+.left-section h1 {
     margin: 0;
     font-size: 40px;
     color: white;
-    
-    
+
+
 }
-.left-section p{
+
+.left-section p {
     margin: 0;
     font-size: 15px;
     letter-spacing: 1px;
     color: rgb(180, 180, 183);
     margin-top: 20px;
     line-height: 25px;
-    
+
 }
-.left-section button{
+
+.left-section button {
     color: rgb(10, 0, 0);
     font-weight: bolder;
     border: none;
     border-radius: 10px;
-    padding:12px 50px ;
+    padding: 12px 50px;
     margin-top: 25px;
     cursor: pointer;
+    transition: 0.3s;
 }
-.left-section button:hover{
+
+.left-section button:hover {
     background: rgb(36, 1, 69);
     color: white;
 }
-.right-section{
+
+.right-section {
     width: 400px;
     background-color: white;
     border-radius: 15px;
     padding: 40px 20px;
-    box-shadow: rgb(40, 34, 10) ;
-    margin-top: 5px;
 }
-.right-section h4{
+
+.right-section h4 {
     font-size: 35px;
-    color:black;
+    color: black;
     margin: auto;
     margin-bottom: 30px;
     width: 300px;
     opacity: 0.8;
     text-align: center;
 }
-.input-group{
-  width: 300px;
-  margin: 30px auto;
-  display: flex;
-  flex-direction: column;
+
+.input-group {
+    width: 300px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
 
 
 }
-.input-group label{
-    
-    color:black;
+
+.input-group label {
+
+    color: black;
     font-size: 14px;
-   
+
 }
-.input-group input{
-    padding: 5px ;
+
+.input-group input {
+    padding: 5px;
     border-radius: 5px;
     border: none;
     outline: none;
-    border-bottom: 1px  solid black;
-    
+    border-bottom: 1px solid #ccc;
+
 }
+
 .submit {
-text-align: center;
+    text-align: center;
 }
-.submit-button{
+
+.submit-button {
     background-color: rgb(3, 84, 20);
-    color:white;
+    color: white;
     border: none;
     padding: 10px 10px;
     margin-top: 10px;
-    border-radius:10px ;
+    border-radius: 10px;
     letter-spacing: 1px;
     width: 300px;
     cursor: pointer;
 }
 
-.section-two{
-    display: flex;
-    justify-content: space-evenly;
-    height: 100vh;
-    align-items: center;
-}
-.about{
-    text-decoration: none;
-    margin-left: 100px;
-    font-size:15px;
-    letter-spacing:1px;
-    color: brown;
+
+
+.about {
+    
+    padding: 2rem 0 1rem 0;
+    text-align: center;
 
 }
-.about p{
-    color: black;
-    font-weight: bolder;
+.about h1{
+    font-size: 2rem;
 }
-.card-container{
-    width: 350px;
-    height: 500px;
+
+.about p {
+    font-size: 0.9rem;
+    font-weight: bolder;
+    width: 80%;
+    margin: 0 auto;
+}
+.section-two{
+    padding: 1.5rem 0;
+}
+.section-two .trainer-bx{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.card-container {
     border-radius: 30px;
     text-align: center;
-    box-shadow: 10px 5px 26px rgb(181, 23, 23);
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.card-container{
-    color: brown;
+
+.image-container {
+    width: 300px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
 }
-.image-container{
+
+.image-container img {
+    display: block;
     width: 100%;
-    height: 550px;
+    transition: 0.5s;
     overflow: hidden;
 }
-.image-container img{
-    width: 100%;
-    height: 90%;
-    transition: 0.5s;
+
+.image-container img:hover {
+    transform: scale(1.1);
 }
-.image-container img:hover{
-    transform: scale(1.1) rotate(5deg);
+
+.video-section {
+    padding: 2rem 0 1rem 0;
 }
-.section-three{
-   width: 300px;
+
+.container {
+    padding: 0 7%;
 }
-.videos{
-    text-decoration: none;
-    margin-left: 100px;
-    font-size:15px;
-    letter-spacing:1px;
-    color: brown;
+
+.title {
+    text-align: center;
 }
-.videos h3{
-    color: black;
-    font-weight: bolder;
+
+.title h1 {
+    font-size: 2rem;
 }
-.section-three{
+
+.title p {
+    font-size: 14px;
+}
+
+.videos {
     display: flex;
-    justify-content:space-evenly;
     align-items: center;
-    width: 100%;
+    justify-content: center;
+    padding: 1.5em;
+    gap: 2rem;
+
 }
 
-footer{
-    width: 100%;
-    margin: 100px;
-    padding: 100px;
-    text-align:center;
-    color: rgb(38, 36, 33);
-    font-weight: bold;
-    padding: 15px;
-    cursor: pointer;
+footer {
+    background: #000;
+    color: #101010;
+    padding: 1.5rem 0;
+    text-align: center;
+    color: #fff;
 }
 
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
 
+footer ul li a {
+    padding: 0 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+}
 
+/* responsive */
+@media (max-width: 991px){
+    .home-bx{
+        flex-direction: column;
+    }
+    .trainer-bx{
+        flex-direction: column;
+    }
+    .videos{
+        flex-direction: column;
+    }
+}
+@media (max-width: 776px){
+    .menu {
+        display: flex;
+    }
+    .navbar ul{
+        flex-direction: column;
+        position: absolute;
+        top: 4.5rem;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.9);
+        display: none;
+        width: 100%;
+        
+    }
+    .navbar.active ul {
+        display: flex; /* Show the menu */
+    }
+    
+    /* Optional: Add a transition effect for the menu */
+    .navbar ul {
+        transition: all 0.3s ease-in-out;
+    }
+    .navbar ul li{
+        padding: 1rem 0;
+        
 
-
-
-
-
-   
-
-
+    }
+}
